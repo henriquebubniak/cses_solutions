@@ -1,16 +1,18 @@
 use std::io;
 
 fn dp(n: i32) -> i32 {
-    if n < 10 { return 1; }
+    if n < 10 {
+        return 1;
+    }
     let mut n1 = n;
     let mut max = 0;
     while n1 > 0 {
         if n1 % 10 > max {
             max = n1 % 10;
         }
-        n1 = n1/10;
+        n1 /= 10;
     }
-    dp(n-max) + 1
+    dp(n - max) + 1
 }
 
 fn main() {
